@@ -1,0 +1,23 @@
+{
+  "name": "table_editor",
+  "version": "1.0.0",
+  "description": "MSSQL table editor",
+  "main": "tableEditor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SPotapchik/tableEditor.git"
+  },
+  "author": "Potapchik Sergey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SPotapchik/tableEditor/issues"
+  },
+  "homepage": "https://github.com/SPotapchik/tableEditor#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0"
+  }
+}

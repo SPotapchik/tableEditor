@@ -3,52 +3,27 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>Table Editor</title>
-	<link rel="stylesheet" type="text/css" href="main.css" >
-	<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-  <div class="wrapper">
-    <div class="header">
-      <span>Company Name</span>
-    </div>
-    <div class="parent"> 
-      <div class = "child">
-        <form class="form">
-          <span class="title"> Вход </span>
-          <span class="name"> Имя пользователя </span>
-          <input class="input" type="text" name="username">
-          <span class="name"> Пароль </span>
-           <input class="input" type="password" name="username">
-          <!-- <button class="button"> Начать сеанс  </button> -->
-		   <input class="button" type="submit" value=" Начать сеанс ">
-        </form>
-      </div> <!--
-  <div class = "child">
-     <form class="form" action="handler.php">
-       <span> Блок 2 </span> 
-      </form>
-  </div> 
-   
-  <div class = "child">
-      <form class="form" action="handler.php">
-       <span> Блок 3 </span> 
-      </form>
-  </div>
-  <div class = "child">
-      <form class="form" action="handler.php">
-       <span> Блок 4 </span> 
-      </form>
-  </div>
-  <div class = "child">
-      <form class="form" action="handler.php">
-       <span> Блок 5 </span> 
-      </form>
-  </div> -->
- </div> 
-</div> 
-</body>
-</html>
+	<div class="wrapper flex">
+		<div class="header">
+			<span>Company Name</span>
+		</div>
+		<div class="flex parent"> 
+			<div class="child">
+				<form class="form flex">
+				<span class="title"> Вход </span>
+				<span class="name"> Имя пользователя </span>
+				<input class="input" type="text" name="username" required="required">
+				<span class="name"> Пароль </span>
+				<input class="input" type="password" name="username" required="required">
+				<button class="button"> Начать сеанс  </button>
+			</form>
+		</div>
+		</div> 
+	</div>
+
+</body></html>
 
 

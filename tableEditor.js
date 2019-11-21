@@ -1,7 +1,26 @@
 "use strict";
 let express = require('express');
+let activeDirectory = require('activedirectory');
 let app = express();
 let handlebars = require('express-handlebars');
+let adConfig = {
+	url: 'ldap://SRV-DC01-DCB:389',
+	baseDN: 'DC=Dixy,DC=local',
+	username: 'sqlhypsvc@Dixy.local',
+	password: 'hypAdmin8ex'
+};
+let ad = new activeDirectory(adConfig);
+
+ad.authenticate('SAPotapchik@Dixy.local','T,fnmndj.yfktdj44',function (err,isAuthenticated){
+	if (err) throw err;
+	if (isAuthenticated) {
+		console.log('Authenticated...');
+	}
+	else {
+		console.log('Failed to authenticate...');
+	}
+});
+
 // let appPort = 3000;
 app.engine('handlebars', handlebars({ defaultLayout: 'main' }));
 app.set('env','production');
@@ -11,7 +30,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {    
-	res.render('home'); 
+	res.render('logon'); 
 }); 
 
 app.get('/about', function(req, res) {    

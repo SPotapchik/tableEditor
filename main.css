@@ -10,6 +10,13 @@ body{
 	color: #8f8f8f;
 	background-color: #8f8f8f;
 }
+.flex{
+	display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
 .header{
 	font: 18px Tahoma;
 	padding: 20px 10px;
@@ -17,10 +24,9 @@ body{
 	background-color: #7e7e7e;
 }
 .wrapper{
-	margin: 0px;
-	padding: 0px; 
+	margin: 0;
+	padding: 0; 
 	height: 100%;
-	display: flex;
 	flex-direction: column;
 	align-items: stretch;
 	align-content: center;
@@ -29,8 +35,6 @@ body{
 .parent {
   	height: 100%;
 	padding: 15px; 
-	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	background-color: #ebebeb;
@@ -46,14 +50,13 @@ body{
   position: relative;
   border-radius: 10px;
   box-sizing: border-box;
-  background-color: #ffff;
+  background: #fff;
 }
 .form {
   margin: 0;
   padding: 0; 
   width: 100%;
   border: 1px white;
-  display: flex;
   box-sizing: border-box;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -101,7 +104,7 @@ body{
   margin 0;
   padding: 0; 
   min-width: 150px;
-  color: #ffff;
+  color: #fff;
   font-size: 16px;
   padding-bottom: 11px; 
   background-color: #333333;

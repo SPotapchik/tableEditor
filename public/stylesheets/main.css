@@ -50,7 +50,7 @@ body{
   position: relative;
   border-radius: 10px;
   box-sizing: border-box;
-  background: #ffff;
+  background: #fff;
 }
 .form {
   margin: 0;
@@ -104,7 +104,7 @@ body{
   margin 0;
   padding: 0; 
   min-width: 150px;
-  color: #ffff;
+  color: #fff;
   font-size: 16px;
   padding-bottom: 11px; 
   background-color: #333333;

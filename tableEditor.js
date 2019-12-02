@@ -6,6 +6,10 @@ let session = require('express-session');
 let bodyParser = require('body-parser');
 let jwt = require('jsonwebtoken');
 let config = require('config');
+let sql = require('mssql');
+
+let adCheck = false;
+let dbCheck = false;
 
 
 console.log(process.env.NODE_ENV);
@@ -22,6 +26,11 @@ let adConfig = config.get('AD');
 let ad = new activeDirectory(adConfig);
 let domain = config.get('APP.domain');
 
+/* MSSQL */
+let dbConfig = config.get('MSSQL');
+let sqlPool = new sql.ConnectionPool(dbConfig);
+
+
 /* Body parser */
 let urlencodedParser = bodyParser.urlencoded({extended: false});
 
@@ -33,12 +42,25 @@ if (process.NODE_ENV = 'PROD') {
 		  return;
 		}
 	   
-		if (! user) console.log('User: ' + sAMAccountName + ' not found.');
-		else console.log(JSON.stringify(user));
+		if (! user) console.log('User: ' + adConfig.username + ' not found.');
+		else {
+				console.log(JSON.stringify(user));
+				adCheck = true;
+		}
 	  });
 }
 
-
+/* Check MSSQL settings */
+let sqlConnect = sqlPool.connect(err => { 
+    if(err){
+        throw err ;
+    }
+    console.log("Connection Successful !");        
+});
+sqlConnect.on('error', err => {
+    // ... error handler 
+    console.log("Sql database connection error " ,err);
+})
 
 app.use(express.static(__dirname + '/public'));
 
